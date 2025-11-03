@@ -5,118 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Ghosts – Archive a Page</title>
 
-<style>
-  body {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(160deg, #0f0f0f 0%, #1a1a1a 80%);
-    color: #f5f5f5;
-    text-align: center;
-    margin: 0;
-    padding: 2em;
-  }
-
-  header img {
-    height: 80px;
-    margin-bottom: 1em;
-  }
-
-  h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.2em;
-    color: #00ffc3;
-  }
-
-  p {
-    font-size: 1.2em;
-    color: #d0d0d0;
-    margin-bottom: 2em;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #input-area {
-    margin: 2em 0;
-  }
-
-  input[type="url"] {
-    width: 60%;
-    max-width: 600px;
-    padding: 15px;
-    font-size: 1.3em;
-    border: 2px solid #00ffc3;
-    border-radius: 6px;
-    outline: none;
-  }
-
-  input[type="url"]:focus {
-    border-color: #66ffe3;
-  }
-
-  button {
-    padding: 15px 25px;
-    font-size: 1.3em;
-    background: #00ffc3;
-    color: #000;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: background 0.3s;
-  }
-
-  button:hover {
-    background: #33ffd2;
-  }
-
-  #status {
-    font-size: 1.1em;
-    margin-top: 1em;
-    height: 1.2em;
-  }
-
-  #recent {
-    margin-top: 3em;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    background: rgba(255,255,255,0.05);
-    border-radius: 10px;
-    padding: 1.5em;
-  }
-
-  #recent h2 {
-    color: #00ffc3;
-    margin-top: 0;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-  }
-
-  li {
-    margin: 0.5em 0;
-    font-size: 1.1em;
-    word-break: break-all;
-  }
-
-  a {
-    color: #66ffe3;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  footer {
-    margin-top: 3em;
-    font-size: 0.9em;
-    color: #777;
-  }
-</style>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -124,14 +13,14 @@
     <!-- Replace with exhibition logo if desired -->
     <!-- <img src="logo.png" alt="Digital Ghosts Logo"> -->
     <h1>Digital Ghosts</h1>
-    <p>Help us preserve Scotland’s digital memory.  
-       Enter a website that you think represents Scotland online,  
+    <p>Let's build a Digital Ghosts web archive collection together? <br>  
+       Enter a website that you think it should be preserved,  
        and watch it be archived instantly in the <em>Wayback Machine</em>.</p>
   </header>
 
   <div id="input-area">
-    <input type="url" id="url" placeholder="https://example.com" required>
-    <button onclick="savePage()">Archive</button>
+  <input type="url" id="url" placeholder="https://example.com" required>
+  <button>Archive</button>
     <div id="status"></div>
   </div>
 
@@ -143,36 +32,9 @@
   <footer>
     <p>Part of the <strong>Digital Ghosts</strong> exhibition at Inspace,  
        University of Edinburgh — November 2025.<br>
-       Built with the <a href="https://web.archive.org" target="_blank">Internet Archive’s Wayback Machine</a>.</p>
+       Built with the Internet Archive’s Wayback Machine.</p>
   </footer>
 
-<script>
-async function savePage() {
-  const input = document.getElementById("url");
-  const url = input.value.trim();
-  const status = document.getElementById("status");
-
-  if (!url) {
-    status.textContent = "Please enter a valid URL.";
-    return;
-  }
-
-  status.textContent = "Archiving… please wait.";
-  try {
-    const response = await fetch(`https://web.archive.org/save/${encodeURIComponent(url)}`, { mode: "no-cors" });
-    // Even without JSON response, we can build a link from URL and timestamp
-    const timestamp = new Date().toLocaleTimeString();
-    const li = document.createElement("li");
-    const archiveLink = `https://web.archive.org/web/*/${url}`;
-    li.innerHTML = `<a href="${archiveLink}" target="_blank">${url}</a> — archived at ${timestamp}`;
-    document.getElementById("list").prepend(li);
-    status.textContent = "✅ Page archived successfully!";
-  } catch (err) {
-    status.textContent = "⚠️ Error connecting to Wayback Machine.";
-  }
-
-  input.value = "";
-}
-</script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
