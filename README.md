@@ -1,16 +1,14 @@
-# Digital Ghosts — frontend
 
-This repository contains a very small frontend used in the Digital Ghosts exhibition to submit pages to the Internet Archive's Wayback Machine.
+# Digital Ghosts — Interactive Kiosk Frontend
 
-What I changed
-- Extracted inline CSS into `css/styles.css`.
-- Extracted inline JavaScript into `js/app.js`.
-- Updated `index.html` to reference the external assets.
+This repository contains the frontend for an interactive kiosk created for the Digital Ghosts exhibition at Inspace, University of Edinburgh. The exhibition invites visitors to engage creatively with web archives.
 
-How to preview
-1. Open `index.html` in your browser (double-click or use a local server).
-2. Enter a URL and click "Archive" — note that direct requests to `web.archive.org/save/` may be blocked by CORS in some browsers; the original implementation used `mode: "no-cors"` which yields an opaque response but triggers the archive request.
+Project site: https://inspace.ed.ac.uk/digital-ghosts/
 
-Notes / next steps
-- Consider moving the archiving request to a server-side proxy to avoid CORS limitations and provide reliable success/failure reporting.
-- Add basic tests or linting if this project grows.
+Purpose
+ This webapp lets users submit URLs to the Internet Archive's Wayback Machine and records those submissions to a Google AppSheet for display in the exhibition. It's optimised for kiosk screen and on-site visitor interaction.
+
+Author: Andrea Kocsis
+License: MIT
+
+
