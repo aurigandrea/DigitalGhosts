@@ -6,7 +6,7 @@ This repository contains the frontend for an interactive kiosk created for the D
 Project site: https://inspace.ed.ac.uk/digital-ghosts/
 
 Purpose
- This webapp lets users submit URLs to the Internet Archive's Wayback Machine and records those submissions to a Google AppSheet for display in the exhibition. It's optimised for kiosk screen and on-site visitor interaction.
+ This webapp lets users submit URLs to the Internet Archive's Wayback Machine and records those submissions to a Google Form and a csv for display in the exhibition. It's optimised for kiosk screen and on-site visitor interaction.
 
 Author: Andrea Kocsis
 License: MIT

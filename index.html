@@ -10,22 +10,21 @@
 
 <body>
   <header>
-    <!-- Replace with exhibition logo if desired -->
-    <!-- <img src="logo.png" alt="Digital Ghosts Logo"> -->
-    <h1>Digital Ghosts</h1>
+    <h1>Digital Ghosts Web Archive</h1>
     <p>Let's build a Digital Ghosts web archive collection together? <br>  
-       Enter a website that you think it should be preserved,  
+       Enter a website that you think should be preserved,  
        and watch it be archived instantly in the <em>Wayback Machine</em>.</p>
   </header>
 
   <div id="input-area">
   <input type="url" id="url" placeholder="https://example.com" required>
-  <button>Archive</button>
+  <button id="archiveBtn">Archive</button>
     <div id="status"></div>
   </div>
 
   <div id="recent">
     <h2>Recently Archived</h2>
+    <p><em>Showing links archived by all visitors</em></p>
     <ul id="list"></ul>
   </div>
 
