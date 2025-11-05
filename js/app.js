@@ -119,16 +119,16 @@ async function loadRecentlyArchived() {
     
     if (lastSubmission) {
       list.innerHTML = `
-        <li style="color: #ff6b6b;">The shared archive list is temporarily unavailable.</li>
-        <li style="color: #00ffff; margin-top: 10px;">
+        <li style="color: #ff6b6b; font-size: 1.8em; margin: 1.3em 0; padding: 0.7em 0;">The shared archive list is temporarily unavailable.</li>
+        <li style="color: #00ffff; margin: 1.3em 0; padding: 0.7em 0; font-size: 1.8em;">
           <span class="archived-url">${lastSubmission.url}</span> — archived at ${lastSubmission.timestamp}
         </li>
-        <li style="color: #999; font-style: italic; font-size: 0.9em; margin-top: 5px;">
+        <li style="color: #999; font-style: italic; font-size: 1.4em; margin: 1.3em 0; padding: 0.7em 0;">
           (Showing your most recent submission)
         </li>
       `;
     } else {
-      list.innerHTML = '<li style="color: #ff6b6b;">The shared archive list is temporarily unavailable. <br>Don\'t worry - your submissions are still being archived!</li>';
+      list.innerHTML = '<li style="color: #ff6b6b; font-size: 1.8em; margin: 1.3em 0; padding: 0.7em 0;">The shared archive list is temporarily unavailable. <br>Don\'t worry - your submissions are still being archived!</li>';
     }
     
     const status = document.getElementById("status");
