@@ -148,7 +148,7 @@ function parseCSV(csvText) {
   
   const archives = [];
 
-  for (let i = 6; i < lines.length; i++) {
+  for (let i = 14; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
 
